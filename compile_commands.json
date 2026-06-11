@@ -1,0 +1,11 @@
+[
+{
+  "directory": "/home/cyan/桌面/Godot-Advanced-Vehicle-main/sdl_haptic",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fPIC", "-g", "-O3", "-I", "/home/cyan/.xmake/packages/g/godotcpp4/4.1/20bd0b73750747c6bbcbc5f3c7779688/gen/include", "-I", "/home/cyan/.xmake/packages/g/godotcpp4/4.1/20bd0b73750747c6bbcbc5f3c7779688/include", "-I", "/home/cyan/.xmake/packages/l/libsdl3/3.4.4/cada89f100be40b6a20e816986ea19bc/include", "-I", "/home/cyan/.xmake/packages/o/opengl-headers/2024.01.04/59ed79d7030a4b298d033d457b08e5ff/include", "-I", "/home/cyan/.xmake/packages/e/egl-headers/2023.12.16/cd777b21b8c84268bf5e21c2813eae03/include", "-I", "/home/cyan/.xmake/packages/s/stduuid/v1.2.3/f4b0c6abb9744ea8a817bc13dc477639/include", "-I", "/home/cyan/.xmake/packages/s/stduuid/v1.2.3/f4b0c6abb9744ea8a817bc13dc477639/include/stduuid", "-I", "/home/cyan/.xmake/packages/m/microsoft-gsl/v4.2.1/d6c5debd3efa47819cb7fe48be4f7ed1/include", "-DNDEBUG", "-o", "build/.objs/sdl_haptic/linux/x86_64/release/src/register_types.cpp.o", "src/register_types.cpp"],
+  "file": "src/register_types.cpp"
+},
+{
+  "directory": "/home/cyan/桌面/Godot-Advanced-Vehicle-main/sdl_haptic",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fPIC", "-g", "-O3", "-I", "/home/cyan/.xmake/packages/g/godotcpp4/4.1/20bd0b73750747c6bbcbc5f3c7779688/gen/include", "-I", "/home/cyan/.xmake/packages/g/godotcpp4/4.1/20bd0b73750747c6bbcbc5f3c7779688/include", "-I", "/home/cyan/.xmake/packages/l/libsdl3/3.4.4/cada89f100be40b6a20e816986ea19bc/include", "-I", "/home/cyan/.xmake/packages/o/opengl-headers/2024.01.04/59ed79d7030a4b298d033d457b08e5ff/include", "-I", "/home/cyan/.xmake/packages/e/egl-headers/2023.12.16/cd777b21b8c84268bf5e21c2813eae03/include", "-I", "/home/cyan/.xmake/packages/s/stduuid/v1.2.3/f4b0c6abb9744ea8a817bc13dc477639/include", "-I", "/home/cyan/.xmake/packages/s/stduuid/v1.2.3/f4b0c6abb9744ea8a817bc13dc477639/include/stduuid", "-I", "/home/cyan/.xmake/packages/m/microsoft-gsl/v4.2.1/d6c5debd3efa47819cb7fe48be4f7ed1/include", "-DNDEBUG", "-o", "build/.objs/sdl_haptic/linux/x86_64/release/src/ffb_godot.cpp.o", "src/ffb_godot.cpp"],
+  "file": "src/ffb_godot.cpp"
+}]
