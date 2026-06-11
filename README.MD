@@ -3,27 +3,27 @@
 A Godot C++ module that provides advanced force feedback (haptic) management using SDL3. Supports constant, periodic, and condition effects with per‑effect update throttling, unique IDs, and fine‑grained control from GDScript.
 ## 🚀 Features
 
-    - Multiple effect types – Constant force, periodic (sine, square, triangle, sawtooth), condition (spring, damper, inertia, friction)
+- Multiple effect types – Constant force, periodic (sine, square, triangle, sawtooth), condition (spring, damper, inertia, friction)
 
-    - Per‑effect control – Unique 64‑bit IDs for each created effect
+- Per‑effect control – Unique 64‑bit IDs for each created effect
 
-    - Runtime updates – Change strength, direction, or coefficients on the fly (200Hz throttled to avoid USB overflow)
+- Runtime updates – Change strength, direction, or coefficients on the fly (200Hz throttled to avoid USB overflow)
 
-    - Start / stop – Independently start, stop, or destroy any effect
+- Start / stop – Independently start, stop, or destroy any effect
 
-    - Hardware‑aware – Auto‑detects number of simultaneous effects the device can play
+- Hardware‑aware – Auto‑detects number of simultaneous effects the device can play
 
-    - Godot‑friendly – All methods are bound to GDScript with simple int keys
+- Godot‑friendly – All methods are bound to GDScript with simple int keys
 
-    - Automatic cleanup – All effects are destroyed when the node is freed
+- Automatic cleanup – All effects are destroyed when the node is freed
 
 ## 📦 Dependencies
 
-    - Godot 4.x (C++ bindings)
+- Godot 4.x (C++ bindings)
 
-    - SDL3 (development libraries)
+- SDL3 (development libraries)
 
-    - A compatible force‑feedback device (e.g., Xbox/PlayStation controller, force‑feedback wheel)
+- A compatible force‑feedback device (e.g., Xbox/PlayStation controller, force‑feedback wheel)
 
 ## 🛠️ Building
 
@@ -154,13 +154,13 @@ destroy_effect_constforce(key) -> bool	Destroys any effect (constant, periodic, 
 
 ## ⚠️ Important Notes
 
-    - Haptic device must support the effect type – Some low‑end devices only support simple rumble. Use print_joy_info() to check Simultaneous Effects.
+- Haptic device must support the effect type – Some low‑end devices only support simple rumble. Use print_joy_info() to check Simultaneous Effects.
 
-    - Update throttling – All updates are limited to 200Hz (5ms interval) to prevent USB buffer overflows.
+- Update throttling – All updates are limited to 200Hz (5ms interval) to prevent USB buffer overflows.
 
-    - Start after creation – Effects are not automatically started. You must call start_effect(key).
+- Start after creation – Effects are not automatically started. You must call start_effect(key).
 
-    - Cleanup – Always call deinit_sdl() before quitting the game, or rely on the FFBManager being freed (auto‑cleanup is provided).
+- Cleanup – Always call deinit_sdl() before quitting the game, or rely on the FFBManager being freed (auto‑cleanup is provided).
 
 ## 📝 Example: Racing Game Steering Wheel
 ```gdscript
