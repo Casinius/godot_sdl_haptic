@@ -27,24 +27,22 @@ A Godot C++ Extension that provides advanced force feedback (haptic) management 
 
 ## 🛠️ Building
 
-Place the source files in modules/sdl_haptic_manager/ inside your Godot source tree.
+### Build with Xmake! 
+Install xmake.
+Run 'xmake build' , agree to pull src packages from github.
 
+Place the dynlibrary into your addon folder!
+
+
+### ManualBuilding
 Ensure SDL3 development packages are installed:
-    - bash
-
-### Ubuntu/Debian
+#### Ubuntu/Debian
 sudo apt install libsdl3-dev
 
-### Arch Linux
+#### Arch Linux
 sudo pacman -S sdl3
 
-### Windows – use vcpkg or download SDL3 devel package
-
-Recompile Godot with the module:
-bash
-
-scons platform=windows target=editor
-### or platform=linuxbsd, macos
+#### Windows – use vcpkg or download SDL3 devel package
 
 ## 📖 Usage
 Basic setup (GDScript)
@@ -110,43 +108,44 @@ ffb.start_effect(spring_key)
 ## 🔧 API Reference
 Initialization / Cleanup
 Method	Description
-init_sdl() -> bool	Opens joystick and haptic device. Must be called first.
 
-deinit_sdl() -> bool	Destroys all effects, closes devices, and quits SDL.
+`init_sdl() -> bool`	Opens joystick and haptic device. Must be called first.
 
-print_joy_info()	Prints joystick name and max simultaneous effects.
+`deinit_sdl() -> bool`	Destroys all effects, closes devices, and quits SDL.
+
+`print_joy_info()`	Prints joystick name and max simultaneous effects.
 
 
 Constant Force
 Method	Description
-new_effect_constforce(lv, dir, attk_len, fade_len) -> int	Creates a constant force effect. Returns unique key or -1 on error.
+`new_effect_constforce(lv, dir, attk_len, fade_len) -> int`	Creates a constant force effect. Returns unique key or -1 on error.
 
-update_effect_constforce(key, lv, dir) -> bool	Updates level and direction. Throttled (200Hz max).
+`update_effect_constforce(key, lv, dir) -> bool`	Updates level and direction. Throttled (200Hz max).
 
-destroy_effect_constforce(key) -> bool	Destroys the effect and frees resources.
+`destroy_effect_constforce(key) -> bool`	Destroys the effect and frees resources.
 
 
 Periodic Effects
 Method	Description
-new_effect_periodic(type, magnitude, offset, period, attack_len, fade_len, direction) -> int	Creates a periodic (waveform) effect.
+`new_effect_periodic(type, magnitude, offset, period, attack_len, fade_len, direction) -> int`	Creates a periodic (waveform) effect.
 
-update_effect_periodic(key, magnitude, offset, direction) -> bool	Updates magnitude, offset and direction.
+`update_effect_periodic(key, magnitude, offset, direction) -> bool`	Updates magnitude, offset and direction.
 
 
 Condition Effects
 Method	Description
-new_effect_condition(type, right_sat, left_sat, right_coeff, left_coeff, deadband, center, attack_len, fade_len) -> int	Creates a condition effect.
+`new_effect_condition(type, right_sat, left_sat, right_coeff, left_coeff, deadband, center, attack_len, fade_len) -> int`	Creates a condition effect.
 
-update_effect_condition(key, right_sat, left_sat, right_coeff, left_coeff, deadband, center) -> bool	Updates condition parameters.
+`update_effect_condition(key, right_sat, left_sat, right_coeff, left_coeff, deadband, center) -> bool`	Updates condition parameters.
 
 
 Common Control
 Method	Description
-start_effect(key) -> bool	Begins playing the effect (infinite duration).
+`start_effect(key) -> bool`	Begins playing the effect (infinite duration).
 
-stop_effect(key) -> bool	Stops the effect without destroying it.
+`stop_effect(key) -> bool`	Stops the effect without destroying it.
 
-destroy_effect_constforce(key) -> bool	Destroys any effect (constant, periodic, or condition).
+`destroy_effect_constforce(key) -> bool`	Destroys any effect (constant, periodic, or condition).
 
 
 
