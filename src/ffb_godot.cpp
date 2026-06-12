@@ -81,7 +81,7 @@ struct Effect_Map : std::unordered_map<std::int64_t, HapPrepare> {
 
     e.constant.level = lv;
     e.constant.direction.dir[0] = dir;
-    if (SDL_UpdateHapticEffect(haptic, id, &e) != 0) {
+    if (!SDL_UpdateHapticEffect(haptic, id, &e)) {
       UtilityFunctions::printerr("Update Failed: ", SDL_GetError());
       return false;
     }
@@ -117,7 +117,7 @@ struct Effect_Map : std::unordered_map<std::int64_t, HapPrepare> {
       return false;
     auto &[e, id, _] = it->second;
     if (id >= 0 && haptic &&
-        SDL_RunHapticEffect(haptic, id, SDL_HAPTIC_INFINITY) == 0)
+        SDL_RunHapticEffect(haptic, id, SDL_HAPTIC_INFINITY))
       return true;
     UtilityFunctions::print("Run Haptic Effect Failed");
     return false;
@@ -195,7 +195,7 @@ struct Effect_Map : std::unordered_map<std::int64_t, HapPrepare> {
     e.periodic.offset = offset;
     e.periodic.direction.dir[0] = direction;
 
-    if (SDL_UpdateHapticEffect(haptic, id, &e) != 0) {
+    if (!SDL_UpdateHapticEffect(haptic, id, &e)) {
       UtilityFunctions::printerr("Update periodic failed: ", SDL_GetError());
       return false;
     }
@@ -273,7 +273,7 @@ struct Effect_Map : std::unordered_map<std::int64_t, HapPrepare> {
     e.condition.deadband[0] = deadband;
     e.condition.center[0] = center;
 
-    if (SDL_UpdateHapticEffect(haptic, id, &e) != 0) {
+    if (!SDL_UpdateHapticEffect(haptic, id, &e)) {
       UtilityFunctions::printerr("Update condition failed: ", SDL_GetError());
       return false;
     }
@@ -425,7 +425,7 @@ public:
 
   bool init_sdl() {
     bool res = SDL_Init(SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC);
-    if (res != 0) {
+    if (!res) {
       const char *err = SDL_GetError();
       UtilityFunctions::printerr("SDL Init Failed: ", err ? err : "(null)");
       return false;
