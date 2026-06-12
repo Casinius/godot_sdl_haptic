@@ -116,8 +116,8 @@ struct Effect_Map : std::unordered_map<std::int64_t, HapPrepare> {
     if (it == end())
       return false;
     auto &[e, id, _] = it->second;
-    if (id >= 0 && haptic &&
-        SDL_RunHapticEffect(haptic, id, SDL_HAPTIC_INFINITY))
+    if (id >= 0 && haptic!=nullptr &&
+        SDL_RunHapticEffect(haptic, id, SDL_HAPTIC_INFINITY)==true)
       return true;
     UtilityFunctions::print("Run Haptic Effect Failed");
     return false;
