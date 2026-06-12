@@ -1,6 +1,6 @@
 # SDL3 Haptic Manager for Godot
 
-A Godot C++ module that provides advanced force feedback (haptic) management using SDL3. Supports constant, periodic, and condition effects with per‑effect update throttling, unique IDs, and fine‑grained control from GDScript.
+A Godot C++ Extension that provides advanced force feedback (haptic) management using SDL3. Supports constant, periodic, and condition effects with per‑effect update throttling, unique IDs, and fine‑grained control from GDScript.
 ## 🚀 Features
 
 - Multiple effect types – Constant force, periodic (sine, square, triangle, sawtooth), condition (spring, damper, inertia, friction)
