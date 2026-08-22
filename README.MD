@@ -196,3 +196,7 @@ Feel free to open issues or PRs. Additional effect types (ramp, custom) can be a
 ## 📄 License
 
 Same as Godot – MIT license. SDL3 is also zlib licensed.
+
+
+## IMPORTANT!!!
+As We know , for a longtime , the wheelbase manufacturer reluctant to adapt to the standard linux hid driver , and even on Windows , sdl-based wheel could have a lot of bugs , those bugs related to a lot of initialization problems and effect launching timing problems , so , this project does not promise to fix those issue in driver for they may fixed by authors. Usually it is suggested to implement haptics for wheelbase using sdks or uinput raw system,etc. But I shall have time to do it if I could have.
